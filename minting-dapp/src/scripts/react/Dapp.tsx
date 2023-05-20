@@ -9,6 +9,7 @@ import CollectionStatus from './CollectionStatus';
 import MintWidget from './MintWidget';
 import Whitelist from '../lib/Whitelist';
 import { toast } from 'react-toastify';
+import Navbar from './Navbar';
 
 const ContractAbi = require('../../../../smart-contract/artifacts/contracts/' + CollectionConfig.contractName + '.sol/' + CollectionConfig.contractName + '.json').abi;
 
@@ -77,11 +78,34 @@ export default class Dapp extends React.Component<Props, State> {
       );
     }
 
+
     this.provider = new ethers.providers.Web3Provider(browserProvider);
+
+    
+
+  await this.initWallet();
 
     this.registerWalletEvents(browserProvider);
 
     await this.initWallet();
+  }
+
+  handleAccountChange = (account: string) => {
+    if (account) {
+      // Account changed or connected
+      this.setState({ userAddress: account });
+      this.refreshContractState();
+    } else {
+      // Wallet disconnected
+      this.disconnectWallet();
+    }
+  }
+
+  disconnectWallet = () => {
+    // Reset the wallet state
+    this.setState(defaultState);
+    // Perform any necessary cleanup or actions on wallet disconnection
+    // For example, you can display a message or redirect the user to a specific page
   }
 
   async mintTokens(amount: number): Promise<void>
@@ -182,6 +206,10 @@ export default class Dapp extends React.Component<Props, State> {
   render() {
     return (
       <>
+      <div>
+        <Navbar/>
+      </div>
+      
         {this.isNotMainnet() ?
           <div className="not-mainnet">
             You are not connected to the main network.
@@ -242,10 +270,11 @@ export default class Dapp extends React.Component<Props, State> {
             {!this.isWalletConnected() ? <button className="primary" disabled={this.provider === undefined} onClick={() => this.connectWallet()}>Connect Wallet</button> : null}
 
             <div className="use-block-explorer text-center">
-            Welcome to the Genesis Eggs NFT Mint Page! This amazing project is the brainchild of fireFalcon303, who brought it to life on the Ethereum blockchain. 
+            {/* Welcome to the Genesis Eggs NFT Mint Page! This amazing project is the brainchild of fireFalcon303, who brought it to life on the Ethereum blockchain.  */}
+            Welcome to Genesis Eggs, our exceptional collection where each piece represents a fusion of innovation, intrinsic value, and artistry. We're excited to offer just 610 exclusive ERC721 1/1 tokens, each one symbolizing the spirit of new beginnings and the excitement of embarking on unexplored paths.
             <br/>
             <br/>
-            Genesis Eggs is an exclusive collection, limited to just 609 distinctive ERC721 1/1 tokens, each one capturing the spirit of community, imagination, and well-being.
+            {/* Genesis Eggs is an exclusive collection, limited to just 609 distinctive ERC721 1/1 tokens, each one capturing the spirit of community, imagination, and well-being. */}
              
             </div>
 
@@ -337,6 +366,7 @@ export default class Dapp extends React.Component<Props, State> {
   private async initWallet(): Promise<void>
   {
     const walletAccounts = await this.provider.listAccounts();
+    console.log("wallet accounts: ",walletAccounts)
 
     this.setState(defaultState);
 
