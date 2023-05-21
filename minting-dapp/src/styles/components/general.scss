@@ -8,7 +8,11 @@ body {
   @apply bg-gradient-to-b from-page-from_bg via-page-from_bg to-page-to_bg;
 
   // Fullscreen background image example
-  background-image: url('../../images/bg.gif');
+  // background-image: url('../../images/bg.gif');
+  background-image: url('../../images/BG_Gif_2.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-attachment: fixed;
   //@apply bg-center bg-cover bg-fixed;
 }
 
