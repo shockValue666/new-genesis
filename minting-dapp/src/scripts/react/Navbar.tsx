@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar-container bg-primary text-white py-4" style={{ position: 'fixed', top: 0, left: 0, right: 0, width: '100%', zIndex: 999 }}>
+    <nav className="navbar-container bg-primary text-white py-4" style={{ position: 'fixed', top: 0, left: -100, right: 0, width: '100%', zIndex: 999 }}>
       <div className="container mx-auto flex justify-between items-center">
         <div>
           {/* Your project name or logo */}
