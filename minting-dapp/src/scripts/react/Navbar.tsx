@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaTwitter, FaDiscord, FaBars } from 'react-icons/fa';
 
+
 const Navbar = () => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
@@ -16,21 +17,31 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex items-center">
           <a
-            href="https://twitter.com/your-twitter"
+            href="https://twitter.com/GenesisEggs"
             target="_blank"
             rel="noopener noreferrer"
             className="mr-4 hover:text-hover_txt"
           >
             <FaTwitter size={32} />
           </a>
-          <a
+          {/* <a
             href="https://discord.gg/your-discord"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-hover_txt"
+            className="mr-4 hover:text-hover_txt"
           >
             <FaDiscord size={32} />
+          </a> */}
+          <a
+            href="https://nametag.org/u/fireFalcon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-hover_txt"
+            style={{ marginLeft: '8px' }} // Apply margin to the left
+          >
+            <img src={`/build/images/Nametag_Cropped_Org.png`} alt="Image icon" width={32} height={32} />
           </a>
+
         </div>
         <div className="md:hidden">
           <button
@@ -57,20 +68,29 @@ const Navbar = () => {
             </div>
             <div className="flex flex-col items-center justify-center h-full">
               <a
-                href="https://twitter.com/your-twitter"
+                href="https://twitter.com/GenesisEggs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="my-2 text-2xl hover:text-hover_txt"
               >
                 <FaTwitter size={32} />
               </a>
-              <a
+              {/* <a
                 href="https://discord.gg/your-discord"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="my-2 text-2xl hover:text-hover_txt"
               >
                 <FaDiscord size={32} />
+              </a> */}
+              <a
+                href="https://nametag.org/u/fireFalcon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-hover_txt"
+                style={{ marginLeft: '8px' }} // Apply margin to the left
+              >
+                <img src={`/build/images/Nametag_Cropped_Org.png`} alt="Image icon" width={32} height={32} />
               </a>
             </div>
           </div>
