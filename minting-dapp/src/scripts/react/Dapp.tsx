@@ -271,7 +271,9 @@ export default class Dapp extends React.Component<Props, State> {
 
             <div className="use-block-explorer text-center">
             {/* Welcome to the Genesis Eggs NFT Mint Page! This amazing project is the brainchild of fireFalcon303, who brought it to life on the Ethereum blockchain.  */}
+            {/* Welcome to Genesis Eggs, our exceptional collection where each piece represents a fusion of innovation, intrinsic value, and artistry. We're excited to offer just 610 exclusive ERC721 1/1 tokens, each one symbolizing the spirit of new beginnings and the excitement of embarking on unexplored paths. */}
             Welcome to Genesis Eggs, our exceptional collection where each piece represents a fusion of innovation, intrinsic value, and artistry. We're excited to offer just 610 exclusive ERC721 1/1 tokens, each one symbolizing the spirit of new beginnings and the excitement of embarking on unexplored paths.
+
             <br/>
             <br/>
             {/* Genesis Eggs is an exclusive collection, limited to just 609 distinctive ERC721 1/1 tokens, each one capturing the spirit of community, imagination, and well-being. */}
