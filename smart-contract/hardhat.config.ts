@@ -128,6 +128,7 @@ const config: HardhatUserConfig = {
       goerli: process.env.BLOCK_EXPLORER_API_KEY,
       mainnet: process.env.BLOCK_EXPLORER_API_KEY,
       rinkeby: process.env.BLOCK_EXPLORER_API_KEY,
+      sepolia: process.env.BLOCK_EXPLORER_API_KEY,
 
       // Polygon
       polygon: process.env.BLOCK_EXPLORER_API_KEY,
@@ -138,6 +139,7 @@ const config: HardhatUserConfig = {
 
 // Setup "testnet" network
 if (process.env.NETWORK_TESTNET_URL !== undefined) {
+  console.log("network teswtnet url: ",process.env.NETWORK_TESTNET_URL)
   config.networks!.testnet = {
     url: process.env.NETWORK_TESTNET_URL,
     accounts: [process.env.NETWORK_TESTNET_PRIVATE_KEY!],

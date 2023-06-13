@@ -15,6 +15,7 @@ export default class NftContractProvider {
     }
 
     if (await ethers.provider.getCode(CollectionConfig.contractAddress) === '0x') {
+      console.log("some shit :",await ethers.provider.getCode(CollectionConfig.contractAddress))
       throw '\x1b[31merror\x1b[0m ' + `Can't find a contract deployed to the target address: ${CollectionConfig.contractAddress}`;
     }
     

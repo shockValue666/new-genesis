@@ -68,3 +68,13 @@ export const polygonMainnet: NetworkConfigInterface = {
     generateTransactionUrl: (transactionAddress: string) => `https://polygonscan.com/tx/${transactionAddress}`,
   },
 }
+
+export const sepolia: NetworkConfigInterface = {
+  chainId: 11155111,
+  symbol: 'ETH',
+  blockExplorer: {
+    name: 'Etherscan',
+    generateContractUrl: (contractAddress: string) => `https://sepolia.etherscan.io/address/${contractAddress}`,
+    generateTransactionUrl: (transactionAddress: string) => `https://sepolia.etherscan.io/tx/${transactionAddress}`,
+  },
+}
